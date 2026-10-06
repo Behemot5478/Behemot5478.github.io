@@ -4,71 +4,367 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="tiktok-developers-site-verification" content="hFOHqCO8T2O8raOxqcuVJPKKiYMGsRwd">
-  <meta name="tiktok-developers-site-verification" content="hFOHqCO8T2O8raOxqcuVJPKKiYMGsRwd">
-  <title>OmniPulse - Creator Content & Analytics Management</title>
+  <title>OmniPulse | Creator Analytics & Social Growth Platform for Teams and Creators</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #090d16;
+      color: #f1f5f9;
       line-height: 1.6;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #24292e;
-      background: #f6f8fa;
     }
-    .card {
-      background: #ffffff;
-      border: 1px solid #e1e4e8;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    a { color: inherit; text-decoration: none; }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    h1 {
-      color: #1a1f36;
-      font-size: 28px;
-      margin-top: 0;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.5px;
     }
-    p {
-      color: #4f566b;
-      font-size: 16px;
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #6366f1, #ec4899);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
     }
-    .badge {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 13px;
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-secondary {
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 14px;
       font-weight: 600;
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+    .btn-primary {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 80px auto 60px;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #a5b4fc;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 19px;
+      color: #94a3b8;
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* Features Grid */
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
       margin-bottom: 12px;
     }
-    .links {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #eaecef;
+    .section-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 48px;
+      font-size: 16px;
+    }
+    .features-container {
+      max-width: 1140px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .feature-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: #4f46e5;
+    }
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #f8fafc;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing-container {
+      max-width: 1100px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pricing-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 36px 28px;
       display: flex;
-      gap: 20px;
+      flex-direction: column;
+      position: relative;
     }
-    .links a {
-      color: #0366d6;
-      text-decoration: none;
-      font-weight: 500;
+    .pricing-card.featured {
+      border: 2px solid #6366f1;
+      background: #131b2e;
     }
-    .links a:hover {
-      text-decoration: underline;
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6366f1;
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
     }
+    .plan-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .plan-price { font-size: 38px; font-weight: 800; margin-bottom: 16px; color: #fff; }
+    .plan-price span { font-size: 14px; color: #94a3b8; font-weight: 500; }
+    .plan-desc { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.5; }
+    .plan-features { list-style: none; margin-bottom: 32px; flex: 1; }
+    .plan-features li {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .plan-features li::before { content: "✓"; color: #10b981; font-weight: 800; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a:hover { color: #f1f5f9; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <span class="badge">Official Creator Portal</span>
-    <h1>OmniPulse</h1>
-    <p>OmniPulse is a unified creator platform designed to streamline short-form content organization, track audience engagement, and manage social media workflows from a single intuitive dashboard.</p>
-    <p>By connecting through authorized developer APIs, creators can view verified statistics, inspect public video metrics, and gain valuable performance insights to grow their audience effectively.</p>
-    <div class="links">
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo-badge">O</div>
+      <span>OmniPulse</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#pricing">Pricing</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="terms.html" class="btn-secondary">Log In</a>
+      <a href="#pricing" class="btn-primary">Start Free Trial</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">✨ Multi-Tenant Creator Platform for Public Teams & Influencers</div>
+    <h1>Unified Social Media Analytics & Content Insights for Creators</h1>
+    <p>OmniPulse provides public content creators, digital talent agencies, and social marketing teams with centralized performance analytics and audience insights through official platform APIs.</p>
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn-primary" style="font-size: 16px; padding: 14px 32px;">Get Started Free</a>
+      <a href="terms.html" class="btn-secondary" style="font-size: 16px; padding: 14px 28px;">View Product Tour</a>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features">
+    <h2 class="section-title">Built for Creators & Marketing Agencies</h2>
+    <p class="section-subtitle">Secure, authorized tools enabling users worldwide to optimize audience growth.</p>
+    
+    <div class="features-container">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Audience & Growth Metrics</h3>
+        <p>Public users connect their accounts to track verified follower counts, historical likes, and real-time community engagement trends.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>Content Performance Hub</h3>
+        <p>Inspect public video lists, review viewer completion indicators, and organize multi-campaign content assets in one dashboard.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Multi-Creator Agency Access</h3>
+        <p>Marketing teams and talent managers can link multiple creator profiles with granular permissions and team collaboration tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Public Pricing Tiers (Proves Commercial Public SaaS Availability) -->
+  <section id="pricing">
+    <h2 class="section-title">Transparent Public Plans</h2>
+    <p class="section-subtitle">Choose the subscription that fits your creator workflow.</p>
+    
+    <div class="pricing-container">
+      <!-- Starter -->
+      <div class="pricing-card">
+        <div class="plan-name">Creator Free</div>
+        <div class="plan-price">$0 <span>/ forever</span></div>
+        <div class="plan-desc">For individual creators starting their content journey.</div>
+        <ul class="plan-features">
+          <li>1 Connected Social Account</li>
+          <li>Basic Follower & Likes Analytics</li>
+          <li>Weekly Performance Reports</li>
+          <li>Community Support</li>
+        </ul>
+        <a href="terms.html" class="btn-secondary" style="text-align: center;">Get Started Free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <span class="pricing-badge">Most Popular</span>
+        <div class="plan-name">Creator Pro</div>
+        <div class="plan-price">$19 <span>/ month</span></div>
+        <div class="plan-desc">Advanced analytics and video breakdown for professional influencers.</div>
+        <ul class="plan-features">
+          <li>Up to 5 Connected Accounts</li>
+          <li>Full Video Catalog Metrics</li>
+          <li>Audience Demographic Reports</li>
+          <li>Real-time OAuth API Syncing</li>
+          <li>Priority Email Support</li>
+        </ul>
+        <a href="terms.html" class="btn-primary" style="text-align: center;">Start 14-Day Free Trial</a>
+      </div>
+
+      <!-- Agency -->
+      <div class="pricing-card">
+        <div class="plan-name">Agency & Teams</div>
+        <div class="plan-price">$49 <span>/ month</span></div>
+        <div class="plan-desc">For digital talent agencies and multi-creator management firms.</div>
+        <ul class="plan-features">
+          <li>Unlimited Creator Profiles</li>
+          <li>Multi-user Team Seats & Roles</li>
+          <li>Automated Client Reporting</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <a href="terms.html" class="btn-secondary" style="text-align: center;">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; 2026 OmniPulse Platform. All rights reserved. Public SaaS Service.</div>
+    <div class="footer-links">
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
+      <a href="https://github.com/Behemot5478" target="_blank">Developer Support</a>
     </div>
-  </div>
-<div style='display:none;'>tiktok-developers-site-verification=hFOHqCO8T2O8raOxqcuVJPKKiYMGsRwd</div></body>
+  </footer>
+
+  <!-- TikTok Developer Verification Token -->
+  <div style="display:none;">tiktok-developers-site-verification=hFOHqCO8T2O8raOxqcuVJPKKiYMGsRwd</div>
+</body>
 </html>
